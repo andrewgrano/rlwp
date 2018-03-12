@@ -1,0 +1,214 @@
+.destinations {
+
+    .locationWidget {
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 30px;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 15px;
+        }
+
+        h6 {
+            font-size: 28px;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 24px;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: 21px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: 28px;
+            }
+
+            @include media-breakpoint-down(xs) {
+                font-size: 24px;
+            }
+
+        }
+    }
+
+    &__header {
+        color: $white;
+        font-family: $displayFont;
+        font-weight: 700;
+        margin-bottom: 45px;
+        border-top: 7px solid $primary-color;
+        border-bottom: 7px solid $primary-color;
+
+        @include media-breakpoint-down(lg) {
+            height: 200px;
+        }
+
+        @include media-breakpoint-down(md) {
+            height: 170px;
+        }
+
+        &.parallax-window {
+            opacity: 1;
+        }
+
+        h2 {
+            font-size: 58px;
+            font-weight: 700;
+            margin-top: 70px;
+            margin-bottom: 25px;
+
+            @include media-breakpoint-down(lg) {
+                margin-top: 40px;
+                font-size: 52px;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-bottom: 15px;
+                font-size: 42px;
+            }
+        }
+
+        a {
+            color: $white;
+            text-decoration: underline;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &__headerMobile {
+        border-bottom: 7px solid $primary-color;
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding-left: 10px;
+
+        span {
+            position: relative;
+
+            &:after {
+                content: "\00bb";
+                position: absolute;
+                top: -2px;
+                right: -15px;
+                font-size: 16px;
+                transform: rotate(0deg);
+                transition: transform 0.5s;
+            }
+        }
+
+        &.collapsed {
+            span {
+                &:after {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    &__country {
+        padding-bottom: 100px;
+
+        @include media-breakpoint-down(lg) {
+            padding-bottom: 80px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: 50px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 25px;
+        }
+
+    }
+
+    &__sidebar {
+        overflow: scroll;
+        height: 100vh;
+        position: relative;
+        background: $light-gray;
+        position: relative;
+        border-top: 7px solid $primary-color;
+        padding: 25px 0;
+
+        @include media-breakpoint-down(lg) {
+            padding: 20px 0;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 15px 0;
+        }
+
+        & > nav {
+            display: block;
+            width: 100%;
+        }
+
+        .nav-link {
+            width: 100%;
+            font-size: 22px;
+            padding-left: 35px;
+            position: relative;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 20px;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: 18px;
+            }
+
+            &:before {
+                content: "\00bb";
+                position: absolute;
+                top: 11px;
+                left: 12px;
+                font-size: 16px;
+                transform: rotate(0deg);
+                transition: transform 0.5s;
+            }
+
+            & + ul {
+                display: none;
+                margin: 0;
+                padding: 0.75em 0 1em 3em;
+                width: 100%;
+                background: #e0e0e0;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+
+                li {
+                    margin-bottom: 0.3em;
+
+                    @include media-breakpoint-down(lg) {
+                        font-size: 17px;
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            &.active {
+
+                &:before {
+                    transform: rotate(90deg);
+                }
+
+                & + ul {
+                    display: block;
+                }
+            }
+        }
+
+        .mCustomScrollBox {
+            width: 100%;
+        }
+    }
+}

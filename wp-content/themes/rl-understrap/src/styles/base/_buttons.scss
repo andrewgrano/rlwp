@@ -1,0 +1,70 @@
+.btn {
+    border-radius: 5px;
+    height: auto;
+}
+
+.btn-primary,
+a.btn-primary {
+    background-color: $secondary-color;
+    color: $white;
+    border: 2px solid $white;
+    padding: 9px 18px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    font-family: $defaultFont;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: darken( $secondary-color, 15% );
+        border-color: $white;
+        color: $white;
+    }
+}
+
+button.alm-load-more-btn.btn-loadmore {
+    @extend .btn-primary;
+    background-color: $secondary-color !important;
+    width: 60%;
+    font-size: 23px;
+    padding: 12px 5px;
+    margin: 10px 0;
+    height: auto;
+    white-space: pre-wrap;
+    line-height: 1.5;
+
+    @include media-breakpoint-down(md) {
+        width: 80%;
+        font-size: 22px;
+        padding: 10px 5px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        font-size: 21px;
+        padding: 8px 5px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 18px;
+    }
+
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: darken( $secondary-color, 15% ) !important;
+    }
+
+    &.loading {
+        &:before {
+            display: none;
+        }
+    }
+
+}
+
+
+
