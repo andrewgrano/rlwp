@@ -46,7 +46,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		        	<div class="footerAboutSection footerAboutSection--contribute">
 	        			<h4 class="footerAbout__heading">
-	        				Want to contribute??
+	        				Want to contribute?
 	        			</h4>
 		        		<div class="footerAbout__desc">
 							Do you have a travel story to tell? Our online community would love to hear about it! We are looking for honest, first-person stories about a trip, vacation, backpacking adventure, car/train/plane ride, overnight visit, or long walk. Make sure you include some photos!
