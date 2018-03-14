@@ -3,10 +3,10 @@ $( document ).ready(function() {
     function collapseWidetsonMobile() {
         if ($(window).width() < 768) {
              $('.destinations__widgetWraper').collapse('hide');
-             console.log("HIDE");
+             // console.log("HIDE");
         } else {
              $('.destinations__widgetWraper').collapse('show');
-             console.log("SHOW");
+             // console.log("SHOW");
         }
     }
 
@@ -23,7 +23,7 @@ $( document ).ready(function() {
 
     $(window).resize(function() {
         delay(function(){
-            console.log('resized');
+            // console.log('resized');
             collapseWidetsonMobile();
         }, 500);
     });

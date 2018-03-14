@@ -24,7 +24,7 @@ function parallaxWindows(){
 
 
 $( document ).ready(function() {
-    console.log("category list page");
+    // console.log("category list page");
     parallaxWindows();
 
     $("img.lazy").lazyload({
@@ -42,7 +42,7 @@ $( document ).ready(function() {
 
     $('body').on('activate.bs.scrollspy', function () {
         $("#destinations__sidebar").mCustomScrollbar("update");
-        console.log(" new item became activated by the scrollspy.")
+        // console.log(" new item became activated by the scrollspy.")
     })
 
     $(window).scroll(function(e) {
