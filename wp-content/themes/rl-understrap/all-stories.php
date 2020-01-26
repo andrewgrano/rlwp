@@ -25,6 +25,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                 <div class="col-lg-9 col-md-11">
                     <h1 class="pageHeading">All Stories..</h1>
 
+
                         <div class="row justify-content-md-center justify-content-lg-start">
 
                             <?php
@@ -35,32 +36,29 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                             $query = new WP_query ( $args );
                             if ( $query->have_posts() ) { ?>
 
-                            <?php while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
-                                <div class="col-lg-4 col-md-6">
+                                <?php while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 
-                                    <?php
+                                    <div class="col-lg-4 col-md-6">
 
-                                    /*
-                                     * Include the Post-Format-specific template for the content.
-                                     * If you want to override this in a child theme, then include a file
-                                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                                     */
-                                    get_template_part( 'loop-templates/widget-main', get_post_format() );
-                                    ?>
-                                </div>
+                                        <?php
 
-                            <?php endwhile; ?>
-
-                        </div> <!-- end row -->
+                                        /*
+                                         * Include the Post-Format-specific template for the content.
+                                         * If you want to override this in a child theme, then include a file
+                                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                                         */
+                                        get_template_part( 'loop-templates/widget-main', get_post_format() );
+                                        ?>
+                                    </div>
 
 
-                    <?php else : ?>
+                                <?php // End the loop.
+                                endwhile;
+                                wp_reset_postdata();
 
-                        <?php get_template_part( 'loop-templates/content', 'none' ); ?>
+                            } ?>
 
-                    <?php endif; ?>
-
-
+                        </div>
                     <!-- The pagination component -->
                     <?php understrap_pagination(); ?>
 
