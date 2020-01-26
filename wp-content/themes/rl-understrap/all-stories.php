@@ -26,8 +26,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
         <div class="row justify-content-md-center justify-content-lg-start">
 
-            $paged = max( get_query_var( 'paged' ), get_query_var( 'page' ), 1 );
+
             <?php
+            $paged = max( get_query_var( 'paged' ), get_query_var( 'page' ), 1 );
             $args = array(
                 'post_type'       => 'post',
                 'orderby'         => 'post_date',
