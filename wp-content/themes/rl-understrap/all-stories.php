@@ -23,20 +23,19 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
             <hr class="hr--primary">
             <div class="row justify-content-md-center">
                 <div class="col-lg-9 col-md-11">
-                    <h1 class="pageHeading">All Stories.</h1>
-
-                    <?php
-                    $args = array(
-                        'posts_per_page' => '12',
-                    );
-
-                    $query = new WP_query ( $args );
-                    if ( $query->have_posts() ) { ?>
-
+                    <h1 class="pageHeading">All Stories..</h1>
 
                         <div class="row justify-content-md-center justify-content-lg-start">
 
-                             <?php while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
+                            <?php
+                            $args = array(
+                                'posts_per_page' => '12',
+                            );
+
+                            $query = new WP_query ( $args );
+                            if ( $query->have_posts() ) { ?>
+
+                            <?php while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
                                 <div class="col-lg-4 col-md-6">
 
                                     <?php
