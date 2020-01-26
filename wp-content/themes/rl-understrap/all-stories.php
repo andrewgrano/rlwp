@@ -21,14 +21,19 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
         <hr class="hr--primary">
-        <h1 class="pageHeading">All Stories...</h1>
+        <h1 class="pageHeading">All Stories....</h1>
 
 
         <div class="row justify-content-md-center justify-content-lg-start">
 
+            $paged = max( get_query_var( 'paged' ), get_query_var( 'page' ), 1 );
             <?php
             $args = array(
-                'posts_per_page' => '24',
+                'post_type'       => 'post',
+                'orderby'         => 'post_date',
+                'order'           => 'desc',
+                'posts_per_page'  => 12,
+                'paged'           => $paged
             );
 
             $query = new WP_query ( $args );
