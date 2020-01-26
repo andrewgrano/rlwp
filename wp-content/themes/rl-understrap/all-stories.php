@@ -23,7 +23,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
             <hr class="hr--primary">
             <div class="row justify-content-md-center">
                 <div class="col-lg-9 col-md-11">
-                    <h1 class="pageHeading">All Stories</h1>
+                    <h1 class="pageHeading">All Stories.</h1>
+
+                    <?php wp_get_archives( array( 'type' => 'postbypost', 'limit' => 20, 'format' => 'custom' ) ); ?>
 
                     <?php
                     $args = array(
