@@ -21,18 +21,20 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
         <hr class="hr--primary">
-        <h1 class="pageHeading">All Stories..</h1>
+        <h1 class="pageHeading">All Stories...</h1>
 
 
         <div class="row justify-content-md-center justify-content-lg-start">
 
             <?php
             $args = array(
-                'posts_per_page' => '12',
+                'posts_per_page' => '24',
             );
 
             $query = new WP_query ( $args );
             if ( $query->have_posts() ) { ?>
+
+
 
                 <?php while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 
@@ -51,12 +53,14 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 
                 <?php // End the loop.
-                endwhile;
-            } ?>
+                    endwhile;
+                } ?>
+
+                <!-- The pagination component -->
+                <?php understrap_pagination(); ?>
 
         </div>
-        <!-- The pagination component -->
-        <?php understrap_pagination(); ?>
+
 
     </div>
 </main>
