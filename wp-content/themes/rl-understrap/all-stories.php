@@ -18,53 +18,46 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 <main class="main allStories" role="main">
 
-        <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+    <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-            <hr class="hr--primary">
-            <div class="row justify-content-md-center">
-                <div class="col-lg-9 col-md-11">
-                    <h1 class="pageHeading">All Stories..</h1>
+        <hr class="hr--primary">
+        <h1 class="pageHeading">All Stories..</h1>
 
 
-                        <div class="row justify-content-md-center justify-content-lg-start">
+        <div class="row justify-content-md-center justify-content-lg-start">
 
-                            <?php
-                            $args = array(
-                                'posts_per_page' => '12',
-                            );
+            <?php
+            $args = array(
+                'posts_per_page' => '12',
+            );
 
-                            $query = new WP_query ( $args );
-                            if ( $query->have_posts() ) { ?>
+            $query = new WP_query ( $args );
+            if ( $query->have_posts() ) { ?>
 
-                                <?php while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
+                <?php while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 
-                                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6">
 
-                                        <?php
+                        <?php
 
-                                        /*
-                                         * Include the Post-Format-specific template for the content.
-                                         * If you want to override this in a child theme, then include a file
-                                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                                         */
-                                        get_template_part( 'loop-templates/widget-main', get_post_format() );
-                                        ?>
-                                    </div>
+                        /*
+                         * Include the Post-Format-specific template for the content.
+                         * If you want to override this in a child theme, then include a file
+                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                         */
+                        get_template_part( 'loop-templates/widget-main', get_post_format() );
+                        ?>
+                    </div>
 
 
-                                <?php // End the loop.
-                                endwhile;
-                                wp_reset_postdata();
+                <?php // End the loop.
+                endwhile;
+            } ?>
 
-                            } ?>
-
-                        </div>
-                    <!-- The pagination component -->
-                    <?php understrap_pagination(); ?>
-
-                </div>
-            </div>
         </div>
+        <!-- The pagination component -->
+        <?php understrap_pagination(); ?>
+
     </div>
 </main>
 <?php get_footer(); ?>
