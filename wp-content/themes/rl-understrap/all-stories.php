@@ -25,13 +25,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                 <div class="col-lg-9 col-md-11">
                     <h1 class="pageHeading">All Stories.</h1>
 
-                    <?php
-                    $args = array(
-                        'posts_per_page' => '12',
-                    );
-                    $query = new WP_query ( $args );
-                    if ( $query->have_posts() ) { ?>
-
+                    <?php if ( have_posts() ) : ?>
                         <?php
                             global $query_string;
                             query_posts( $query_string . '&posts_per_page=12' );
@@ -59,11 +53,13 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
                         </div> <!-- end row -->
 
+
                     <?php else : ?>
 
                         <?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
                     <?php endif; ?>
+
 
                     <!-- The pagination component -->
                     <?php understrap_pagination(); ?>
