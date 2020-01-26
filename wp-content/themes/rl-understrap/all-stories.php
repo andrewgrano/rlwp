@@ -21,7 +21,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
         <hr class="hr--primary">
-        <h1 class="pageHeading">All Stories....</h1>
+        <h1 class="pageHeading">All Stories.....</h1>
 
 
         <div class="row justify-content-md-center justify-content-lg-start">
@@ -62,8 +62,20 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                     endwhile;
                 } ?>
 
-                <!-- The pagination component -->
-                <?php understrap_pagination(); ?>
+
+                <?php
+                    $orig_max_num_pages = $wp_query->max_num_pages; // backup
+
+                    // Change it just for the pagination.
+                    // and $latestArticles is your custom WP_Query instance.
+                    $wp_query->max_num_pages = $latestArticles->max_num_pages;
+
+                    understrap_pagination( [
+                        'current' => $paged,
+                    ] );
+
+                    $wp_query->max_num_pages = $orig_max_num_pages; // restore
+                ?>
 
         </div>
 
