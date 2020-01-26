@@ -78,7 +78,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
             	$authorCount = count_user_posts($author_id);
 
 				if(is_author()){
-					if($authorCount > 9 ) {
+					if($authorCount > 102 ) {
 
 					   $name = get_the_author_meta('display_name');
 					   echo do_shortcode('[ajax_load_more author="'.$author_id.'" container_type="div" post_type="post" posts_per_page="9" offset="9" pause="true" scroll="false" transition="fade" button_label="View More Stories by '.$curauth->nickname.'" button_loading_label="Loading..." transition_container="false" css_classes="row"]');

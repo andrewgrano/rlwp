@@ -136,7 +136,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<?php if ( have_posts() ) : ?>
 				<?php
 					global $query_string;
-					query_posts( $query_string . '&posts_per_page=9&offset=3' );
+					query_posts( $query_string . '&posts_per_page=12&offset=3' );
 				 ?>
 
 				<div class="row justify-content-md-center justify-content-lg-start">
@@ -168,7 +168,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<?php endif; ?>
 
+			<!--
 			<?php echo do_shortcode("[ajax_load_more container_type='div' post_type='post' posts_per_page='9' offset='14' pause='true' transition='fade' button_label='View More Stories' button_loading_label='Loading...' scroll='false' transition_container='false' css_classes='row' ]"); ?>
+ 			-->
 
 			<hr class="hr--primary">
 

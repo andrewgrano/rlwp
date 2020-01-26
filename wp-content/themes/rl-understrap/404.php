@@ -28,9 +28,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		<div class="page-content">
 
 			<p>But you can <a href="/">return to the homepage</a> or <a href="/destinations">check out all the destinations</a> or search for something below.</p>
-
+<!--
 			<?php get_search_form(); ?>
-
+ -->
 
 		</div><!-- .page-content -->
 	</div>
